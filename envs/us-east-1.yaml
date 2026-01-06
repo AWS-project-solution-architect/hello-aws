@@ -1,5 +1,5 @@
 message: "hello from AWS - us-east-1 work"
 
 ingress:
-  host: hello-us.aws-dvirlabs.com
+  host: hello.aws-dvirlabs.com
   loadBalancerName: hello-us
