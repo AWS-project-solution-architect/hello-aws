@@ -18,7 +18,7 @@ spec:
     metadata:
       name: hello-aws-{{name}}
     spec:
-      project: default
+      project: my-apps
 
       source:
         repoURL: https://github.com/AWS-project-solution-architect/hello-aws.git
