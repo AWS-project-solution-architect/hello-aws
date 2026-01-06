@@ -1,4 +1,4 @@
-message: "hello from AWS - us-east-1"
+message: "hello from AWS - us-east-1 work"
 
 ingress:
   host: hello-us.aws-dvirlabs.com

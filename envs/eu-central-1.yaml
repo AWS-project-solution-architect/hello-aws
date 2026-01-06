@@ -1,4 +1,4 @@
-message: "hello from AWS - eu-central-1"
+message: "hello from AWS - eu-central-1 work"
 
 ingress:
   host: hello-eu.aws-dvirlabs.com
