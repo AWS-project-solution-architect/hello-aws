@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: hello-aws
+  namespace: argocd
+spec:
+  generators:
+    - clusters:
+        selector:
+          matchExpressions:
+            - key: region
+              operator: In
+              values:
+                - eu-central-1
+                - us-east-1
+
+  template:
+    metadata:
+      name: hello-aws-{{name}}
+    spec:
+      project: default
+
+      source:
+        repoURL: https://github.com/AWS-project-solution-architect/hello-aws.git
+        targetRevision: main
+        path: hello-aws-chart
+        helm:
+          valueFiles:
+            - ../envs/{{metadata.labels.region}}.yaml
+
+      destination:
+        server: "{{server}}"
+        namespace: my-apps
+
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true

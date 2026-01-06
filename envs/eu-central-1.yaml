@@ -1,0 +1,5 @@
+message: "hello from AWS - eu-central-1"
+
+ingress:
+  host: hello-eu.aws-dvirlabs.com
+  loadBalancerName: hello-eu
